@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Microsoft", "Helvetica", "sans-serif";
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 基础设置 */
+
+#container{
+    height: 100%;
+    width: 100%;
+    
+}
+.topbar{
+    margin: 0 120px 0 120px;
+    
+}
+.topbar li{
+    float: right;
+    height: 40px;
+    
+}
+.topbar li a{
+    
+    margin-right: 5px;
+    display: block;
+    color: #999999;
+    line-height: 40px;
+}
+.topbar li a:hover{
+    text-decoration: underline;
+}
+.topbar li a span{
+    font-size: 14px;
+    color: #999999;
+    font-family: sans-serif;
+    margin: 0 0.5em;
+}
+header{
+    height: 40px;
+    width: 100%;
+    background-color: #eeeeee;
+    
+}
+
+#top_logo{
+    padding: 10px 120px 10px 120px;
+    /* border: 1px solid red; */
+}
+#Search{
+    position: absolute;
+    right: 250px;
+    top: 85px;
+    border: 1px solid #F1F1F1;
+
+}
+.text{
+    width: 130px;
+    height: 28px;
+    line-height: 30px;
+    border: none;
+    float: left;
+    padding-left: 8px;
+}
+.submit {
+    float: right;
+    display: inline;
+    cursor: pointer;
+    background: url(img/search.png);
+    background-repeat: no-repeat;
+    background-position: 7px 7px;
+    border: none;
+    height: 28px;
+    width: 28px;
+}
+#Winered{
+    background-color: rgb(115,4,26);
+    height: 35px;
+    font-size: 18px;
+}
+#Brightred{
+    background-color: #ae0627;
+    height: 33px;
+    margin: 0 120px;
+}
+.Drawer{
+    height: 40px;
+}
+.Drawer li{
+    float: right;
+}
+.Drawer li:hover{
+    color: #ae0627;
+}
+.Drawer li a{
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-left: 22px;
+    margin-right: 10px;
+}
+.Drawer li a:hover{
+    color: #FFFFFF;
+}
+.Drawer li  span{
+    font-size: 20px;
+    color: #eeeeee;
+    margin-left: 12px;
+}
+
+
+/* #topMenu li{
+    border-right: 1px #ddd solid;
+    float: right; 
+    padding: 5px;
+}
+#topMenu li a{
+    color: rgb(63, 58, 58);
+}
+#topMenu li a:hover{
+    text-decoration: underline;
+}
+#topMenu li:nth-child(5){
+    border-right: none;
+} */

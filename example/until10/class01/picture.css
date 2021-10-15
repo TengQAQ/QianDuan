@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Microsoft", "Helvetica", "sans-serif";
+    font-style: normal;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 基础设置 */
+@keyframes tupianfanda {
+    0% {
+        transform: scale(1,1);
+    }
+    25% {
+        transform: scale(1.5,1.5);
+    }
+    50% {
+        transform: scale(2,2);
+    }
+    75% {
+        transform: scale(1.5,1.5);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+/* 关键帧动画 */
+.fullscreen{
+    width: 100%;
+    background-image: url(img/e98f2463cef34e3caa861c65f4e516ec.jpeg);
+    height: 800px;
+}
+.fullscreen ul{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+.fullscreen li{
+    float: left;
+    margin: 30px 30px;
+    /* background-color: aliceblue; */
+}
+.fullscreen .img{
+    width: 100px;
+    height: 100px;
+}
+.fullscreen .img:hover{
+    animation-name: tupianfanda;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 99;
+}
+.fullscreen .img1{
+    transform: rotate(48deg);
+    z-index: 1;
+}
+.fullscreen .img2{
+    transform: rotate(18deg);
+    z-index: 1;
+}
+.fullscreen .img3{
+    transform: rotate(-68deg);
+    z-index: 1;
+}
+.fullscreen .img4{
+    transform: rotate(-68deg);
+    z-index: 1;
+}
+.fullscreen .img5{
+    transform: rotate(-168deg);
+    z-index: 1;
+}
+.fullscreen .img6{
+    transform: rotate(29deg);
+    z-index: 1;
+}
+.fullscreen .img7{
+    transform: rotate(45deg);
+    z-index: 1;
+}
+.fullscreen .img8{
+    transform: rotate(62deg);
+    z-index: 1;
+}
+.fullscreen .img9{
+    transform: rotate(-68deg);
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

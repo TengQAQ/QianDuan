@@ -1,0 +1,134 @@
+#shop{
+    background-color: #fafafa;
+    width: 100%;
+    height: 100%;
+}
+#shop #classification{
+    width: 1200px;
+    margin: 0px auto;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+}
+#shop #classification #menu{
+    /* border: 1px solid red; */
+    color:#fafafa;
+    background-color: #333;
+}
+#shop #classification #menu li{
+    margin: 10px 50px 10px 20px;
+    height: 30px;
+    line-height: 30px;
+}
+#shop #classification #banner{
+    height: 410px;
+}
+#shop #classification #more{
+    width: 240px;
+    margin: 0 0 0 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#more p{
+    font-size: 14px;
+}
+#more #iwantbuy{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: black;
+    font-weight: 540;
+}
+#more #iwantsell{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: black;
+    font-weight: 540;
+}
+#more #iwantsay{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: black;
+    font-weight: 540;
+}
+#hotshop{
+    width: 1200px;
+    margin: 0px auto;
+}
+#hotshop-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#hotshop #hotshop-name p.biaoti{
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+    margin: 20px 0px;
+}
+#hotshop #hotshop-name p.miaoshu{
+    margin: 32px 0px 0px 10px;
+}
+#hotshop-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom:1px solid #F1F1F1;
+}
+.hotshophome{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 600px;
+}
+.hotshophome .hotname{
+    margin: 0 0 0 15px;
+}
+.hotshop-more{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+}
+.hotshop-more .hotshop-up{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.hotshop-up li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hotshop-more .hotshop-down{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hotshop-more .hotshop-down li{
+    margin: 25px;
+}
+
+#zanzu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#zanzu li img{
+    width: 160px;
+}

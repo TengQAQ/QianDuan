@@ -1,0 +1,54 @@
+*{
+    margin: 0;/*内边距*/
+    padding: 0;/*外边距*/
+}
+body{
+     background-color: rgb(204,204,153);
+     background-image: url("img/background.gif");
+     background-repeat: repeat-x;/*背景图像将在水平方向重复。*/
+
+}
+ul{
+    list-style: none;/*去标记*/
+}
+#container{
+    width: 720px;/*宽度*/
+    /* border: 1px solid; */
+    margin: 60px auto 0;/*外边距*/
+}
+li{
+    float: left;/*浮动向右对齐*/
+}
+.left{
+    float: right;/*浮动向右对齐*/
+}
+#text{
+    width: 260px;/*宽度*/
+    height: 300px;/*高度*/
+    position: relative;/*继承父类*/
+    top: -170px;/*绝对位置（相对父类的坐标）调节上下*/
+    left: 500px;/*绝对位置（相对父类的坐标）调节左右*/
+    /* border: 1px solid; */
+}
+h1{
+    width: 137px;/*宽度*/
+    height: 170px;/*高度*/
+    background-image: url("img/logo的副本.png");/*上面已经设计了大小，在其中插入图片*/
+    position: relative;/*继承父类*/
+    top: 120px;/*绝对位置（相对父类的坐标）调节上下*/
+    left: 360px;/*绝对位置（相对父类的坐标）调节左右*/
+}
+h2{
+    display: none;/*设置不可见*/
+}
+span{
+    display: none;/*设置不可见*/
+}
+a{
+    color: white;/*未点击的颜色*/
+    font-weight: bold;/*字体加粗*/
+    text-decoration: none;/*去掉下划线*/
+}
+a:hover{
+    color: rgb(235, 14, 206);/*点击后的颜色*/
+}

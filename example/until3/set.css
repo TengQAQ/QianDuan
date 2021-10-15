@@ -1,0 +1,26 @@
+*{
+    margin: 0;/*外边距*/
+    padding: 0;/*内边距*/
+}
+#container_1{
+    width: 430px;
+    height: 840px;
+    margin: 0 auto;
+    background-color: rgb(122, 117, 117);
+}
+.head_1{
+    clear: both;
+    font-weight: bold;
+    border-left:52px solid #444 ;
+    color:#444;
+    margin: 60px -60px; 
+    padding:1px 0 0 8px;
+    position:relative;
+}
+#container_2{
+    width: 360px;
+    height: 650px;
+    margin: 35px auto;
+    background-color: rgb(240, 125, 125);
+
+}

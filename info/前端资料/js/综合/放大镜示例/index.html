@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1200px;
+            height: 600px;
+            margin: 10px auto;
+            background-color: #ccc;
+        }
+        .show{
+            width: 350px;
+            height: 350px;
+            position: relative;
+            float: left;
+        }
+        .mask{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            opacity: .4;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .bigbox{
+            width: 500px;
+            height: 500px;
+            float: left;
+            margin-left: 200px;
+            position: relative;
+            overflow: hidden;
+            display:none;
+        }
+        .bigImg{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="show">
+            <img src="./img/show.jpg" alt="">
+            <div class="mask"></div>
+        </div>
+        <div class="bigbox">
+            <img src="./img/big.jpg" alt="" class="bigImg">
+        </div>
+    </div>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        new Magnifier()
+    </script>
+</body>
+</html>

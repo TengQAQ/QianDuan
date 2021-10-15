@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11431136",
+      "name": "play",
+      "font_class": "play",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    }
+  ]
+}

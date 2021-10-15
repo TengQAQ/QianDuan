@@ -1,0 +1,35 @@
+#recommend{
+    width: 1200px;
+    height: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#recommend li{
+    width: 230px;
+    height: 320px;
+    border: 1px solid #fafafa;
+    background-color: white;
+}
+#recommend li .re-photo{
+    width: 240px;
+    height: 240px;
+}
+#recommend li .re-more .re-money{
+    font-size: 18px;
+    color: red;
+}
+#recommend li .re-more .re-mark{
+    /* height: 20px; */
+    margin-top: 10px;
+    /* border: 1px solid red; */
+}
+#recommend li .re-more .re-mark span.importent{
+    color: #f60;
+    border: 1px solid rgba(255,102,0,.4);
+    background: rgba(255,102,0,.08);
+    border-radius: 2px;
+}

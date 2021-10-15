@@ -1,0 +1,31 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+/* table{       */
+    /* margin:0 auto;       */
+    /* 使整个计算器的界面位于网页中央  */
+/* } */
+/* .but_ac{ */
+    /* width: 80px; */
+    /* height: 60px; */
+    /* background-color : lightgray;   */
+    /* 设置按钮的背景颜色为浅灰色 */
+    /* font-size: 1.2em;               */
+    /* 设置字体大小 */
+/* }
+.but{
+    width: 80px;
+    height: 60px;
+    background-color : lightgray;
+    font-size: 1.2em;
+}
+.screen{
+        width: 350px;
+    height: 70px;
+    font-size: 1.5em;
+    color: white;
+    background-color: black;
+    text-align:right;        */
+    /*使用户输入的表达数从屏幕的右边开始显示*/
+/* } */

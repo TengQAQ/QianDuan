@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Microsoft", "Helvetica", "sans-serif";
+    font-style: normal;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 基础设置 */
+.fullsrceen{
+    width: 100%;
+    height: 800px;
+    background-color: #fff;
+    z-index: 1;
+}
+.topbar{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    z-index: 2;
+}
+.topbar>ul{
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+}
+.topbar ul>li{
+    float: left;
+    border: 1px solid red;
+}
+.topbar ul>li a{
+    display: block;
+    /* width: 100px; */
+    color: #FFF;
+    line-height: 40px;
+    margin: 0px 20px;
+    /* border: 1px solid red; */
+}
+.topbar>ul li:hover{
+    color: yellow;
+}
+.xialaliebiao{
+    display: none;
+    position: absolute;
+}
+.xialaliebiao li>a{
+    position: absolute;
+    color: black;
+    float: left;
+    /* z-index: 50; */
+    border: 1px solid rebeccapurple;
+}
+.topbar ul>li:hover .xialaliebiao{
+    display: block;
+}
+
+
