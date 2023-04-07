@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档</title>
+    <script src="js/vue-2.7.14.js"></script>
+</head>
+<body>
+    <div id='root'>
+
+    </div>
+    <script>
+        const pro = new Promise(function(resolve,reject){
+            console.log("实现异步操作的逻辑");
+            reject()
+            resolve()
+        })
+        pro.then(function(){
+            console.log('fulified');
+        }).catch(function(){
+            console.log('rejected');
+        }).finally(function(){
+            console.log('都要执行的finally语句');
+        })
+       // 通过el挂载
+       const vm = new Vue({
+           el:'#root',
+            data(){
+                return{
+                    message:'hello word'
+               }
+            }
+       })
+
+
+    </script>
+</body>
+</html>

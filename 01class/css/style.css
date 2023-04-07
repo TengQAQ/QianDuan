@@ -1,0 +1,24 @@
+*{
+    font-size: large;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 1400px;
+    height: 100%;
+    margin: auto;
+    /* background-color: red; */
+}
+#tin1{
+    width: 90%;
+    width: 100%;
+}
+#tin2{
+    width: 90%;
+    width: 100%;
+    position:fixed;
+    bottom: 30%;
+    left: 80%;
+    font-size:xx-large;
+}

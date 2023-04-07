@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue-2.7.14.js"></script>
+    <title>xmlHttpRequest</title>
+</head>
+<body>
+    <div id='root'>
+        {{message}}
+    </div>
+    <script>
+        function getJson(callback){
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET','http://localhost:80/web/test')
+            xhr.responseType = 'json'
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200 ){
+                    // console.log(xhr.response)
+                    callback(xhr.response)
+                }
+            }
+            //发送请求
+            xhr.send()
+        }
+       // 通过el挂载
+       const vm = new Vue({
+            el : '#root',
+            data(){
+                return{
+                    message:'hello word'
+               }
+            },
+            methods: {
+                // getjosn(callback){
+            }
+       })
+        getJson(function(response){
+        console.log(response);
+       })
+    </script>
+</body>
+</html>

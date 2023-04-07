@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 300px;
+            border-left: 1px solid #000000;
+            border-top: 1px solid #000000;
+            /*相邻边框折叠*/
+            border-collapse: collapse;
+        }
+        td,th{
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+            <!--<tr v-for="item in arr" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>
+                    <a @click.prevent="remove(item)">删除</a>
+                </td>
+            </tr>-->
+        </tbody>
+    </table>
+</body>
+<script>
+     function getJson(callback){
+        // 发起ajax异步请求数据
+        const xhr = new XMLHttpRequest()
+        // 向指定url地址发起一次get请求
+        xhr.open('GET','http://localhost/web/test')
+        // xhr.open('POST','https://meishi.meituan.com/i/api/channel/deal/list?yodaReady=h5')
+        // 预期服务器响应的数据为json格式的字符串
+        xhr.responseType = 'json'
+        // 发起异步请求后，何时才能够知道服务器响应回了数据
+        xhr.onreadystatechange = function(){
+            // xhr.status 指http请求的响应的状态码
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
+                // 得到服务器响应回来的数据
+                callback(xhr.response)
+            }
+        }
+        // 发起请求
+        xhr.send()
+    }
+
+    getJson(function(response){
+        console.log('接收到服务器响应的数据：', response)
+        const tbody = document.querySelector('#tbody')
+        for (const responseElement of response) {
+            const template = `
+                    <tr>
+                        <td>${responseElement.id}</td>
+                        <td>${responseElement.name}</td>
+                        <td>${responseElement.age}</td>
+                        <td>
+                            <a >删除</a>
+                        </td>
+                    </tr>
+            `
+            tbody.innerHTML = tbody.innerHTML + template
+        }
+    })
+
+
+
+
+    // let json = '{\n' +
+    //     '  "poiInfos": [\n' +
+    //     '    {\n' +
+    //     '      "avgPrice": 68,\n' +
+    //     '      "avgScore": 5,\n' +
+    //     '      "cateName": "融合烤肉",\n' +
+    //     '      "frontImg": "//p0.meituan.net/biztone/570078943_1675242850371.jpeg",\n' +
+    //     '      "name": "三合记新派烤肉（渝北金童路店）"\n' +
+    //     '    },\n' +
+    //     '    {\n' +
+    //     '      "avgPrice": 83,\n' +
+    //     '      "avgScore": 4.8,\n' +
+    //     '      "cateName": "居酒屋",\n' +
+    //     '      "frontImg": "//p1.meituan.net/biztone/770193549_1670410694613.jpeg",\n' +
+    //     '      "name": "空海•日料酒场（金童路店）"\n' +
+    //     '    },\n' +
+    //     '    {\n' +
+    //     '      "avgPrice": 67,\n' +
+    //     '      "avgScore": 4.8,\n' +
+    //     '      "cateName": "汤锅",\n' +
+    //     '      "frontImg": "//p1.meituan.net/biztone/1846874725_1666931296429.jpeg",\n' +
+    //     '      "name": "龙啸汤品·涮烤一体（汽博奥园店）"\n' +
+    //     '    },\n' +
+    //     '    {\n' +
+    //     '      "avgPrice": 10,\n' +
+    //     '      "avgScore": 3.6,\n' +
+    //     '      "cateName": "过桥米线",\n' +
+    //     '      "frontImg": "//p0.meituan.net/merchant/9a6f56ffbf6e06ac24f0dbc66652c71281134.jpg",\n' +
+    //     '      "name": "市喜米线（渝北爱琴海店）"\n' +
+    //     '    },\n' +
+    //     '    {\n' +
+    //     '      "avgPrice": 88,\n' +
+    //     '      "avgScore": 4.7,\n' +
+    //     '      "cateName": "融合烤肉",\n' +
+    //     '      "frontImg": "//p0.meituan.net/biztone/1744350973_1658460922269.jpeg",\n' +
+    //     '      "name": "东北烤肉·薇薇家（渝北金童路店）"\n' +
+    //     '    }\n' +
+    //     '  ]\n' +
+    //     '}';
+    // poiInfos = JSON.parse(json);
+    // // console.log(poiInfos)
+    // let tbody = document.querySelector("tbody");
+    // for (let key in poiInfos) {
+    //     for (let iterator of poiInfos[key]) {
+    //         console.log(iterator)
+    //             let newtr = document.createElement("tr");
+    //         for (let index in iterator) {
+    //             let th = document.createElement("th");
+    //             th.appendChild(document.createTextNode(iterator[index]));
+    //             newtr.appendChild(th);
+    //         }
+    //             let button = document.createElement("button")
+    //             newtr.appendChild(button)
+    //             tbody.appendChild(newtr);
+    //     }
+    // }
+
+
+</script>
+</html>

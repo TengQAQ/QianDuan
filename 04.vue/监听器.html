@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>把玩监听器</title>
+</head>
+<body>
+    <div id='root'>
+        <button @click="beidianji()">{{ jianshiqi }}</button>
+        <p>{{message}}</p>
+    </div>
+    <Script src="js/vue-2.7.14.js"></Script>
+    <script>
+       // 通过el挂载
+       const vm = new Vue({
+            el : '#root',
+            data(){
+                return{
+                    message:'hello word',
+                    jianshiqi:5
+               }
+            },
+            watch : {
+                jianshiqi(newVal,oldval){
+                    console.log('坚挺到数值的变化',newVal,'原来的数值是',oldval)
+                }
+            },
+            methods:{
+                beidianji(){
+                    this.jianshiqi++
+                }
+            }
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>helloVue</title>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+</head>
+<body>
+    <!-- Vue基于模板引擎来渲染 -->
+    <div id="root">
+        <div>
+            <h1>初始Vue</h1>
+            <p>{{title}}</p>
+            <h2>{{str.toUpperCase().split('').reverse().join('')}}</h2>
+            <h1>v-bind是一个vue内置的指令，能够获取data中的属性并设置为html标签的属性值</h1>
+            <input v-bind:type = "inputtype">
+            <button @click="inputtype = 'text'">查看密码</button>
+            <a v-bind:href="link.harf">{{link.title}}</a>
+        </div>
+    </div>
+    <script src="js/vue-2.7.14.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#root',
+            data(){
+                return{
+                    inputtype:'password',
+                    title:'hello vue',
+                    str:'abc',
+                    link:{
+                        harf:'http://www.baidu.com',
+                        title:'百度一下你就知道'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

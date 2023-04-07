@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <style>
+        #root ul li{
+            display:inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+        }
+        #root ul li:hover{
+            color: aqua;
+            border: 1px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id='root'>
+        <ul>
+            <li>用户管理</li>
+            <li>商品管理</li>
+        </ul>
+    </div>
+
+    <script src="js/vue-2.7.14.js"></script>
+    <script>
+       // 通过el挂载
+       const vm1 = new Vue({
+           el:'#root',
+            data(){
+                return{
+                    message:'hello word'
+               }
+            }
+       })
+    //    // 通过mant挂载
+    //    const vm = new Vue({
+    //         data(){
+    //             return{
+    //                 message:'hello word'
+    //             }
+    //         },
+    //    })
+    //    vm.mount('#root')
+    </script>
+
+</body>
+</html>

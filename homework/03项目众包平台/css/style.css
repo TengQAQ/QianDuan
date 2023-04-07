@@ -1,0 +1,66 @@
+*{
+    font-size: 16px;
+    font-family: "行书";
+}
+#container{
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+}
+#header{
+    height: 60px;
+    border: 3px solid red;
+}
+#nav{
+    float: right;
+    /* width: 320px; */
+}
+#nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    /* align-items: center; */
+    /* height: 40px; */
+    /* font-size: 18px; */
+    /* width: 60px; */
+}
+#nav ul li{
+    list-style: none;
+    font-size: 18px;
+    margin: 0 10px;
+    /* width: 80px; */
+}
+#content{
+    /* float: left; */
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    height: 378px; */
+}
+#logo{
+    float: left;
+    width: 40%;
+}
+#content ul li{
+    font-size: 18px;
+}
+#content div{
+    width: 40%;
+}
+#section{
+    float: right;
+    width: 40%;
+    /* padding-top: 40px; */
+
+}
+#content #section form{
+    border: 2px solid black;
+}
+#footer{
+    clear: both;
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+    border: 3px solid red;
+}

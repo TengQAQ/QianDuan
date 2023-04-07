@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "908585",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    }
+  ]
+}

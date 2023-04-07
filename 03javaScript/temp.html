@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-left: 1px solid #000000;
+            border-top: 1px solid #000000;
+            /*相邻边框折叠*/
+            border-collapse: collapse;
+        }
+        td,th{
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table id="tab">
+    <thead>
+    <tr>
+        <th>
+            <label>
+                <input type="checkbox" id="all" /> 全选
+            </label>
+        </th>
+        <th>名字</th>
+        <th>种类</th>
+        <th>价格</th>
+        <th>评分</th>
+        <th>封面图</th>
+        <th>封操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+<script>
+    let json = '{\n' +
+        '  "poiInfos": [\n' +
+        '    {\n' +
+        '      "avgPrice": 68,\n' +
+        '      "avgScore": 5,\n' +
+        '      "cateName": "融合烤肉",\n' +
+        '      "frontImg": "//p0.meituan.net/biztone/570078943_1675242850371.jpeg",\n' +
+        '      "name": "三合记新派烤肉（渝北金童路店）"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "avgPrice": 83,\n' +
+        '      "avgScore": 4.8,\n' +
+        '      "cateName": "居酒屋",\n' +
+        '      "frontImg": "//p1.meituan.net/biztone/770193549_1670410694613.jpeg",\n' +
+        '      "name": "空海•日料酒场（金童路店）"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "avgPrice": 67,\n' +
+        '      "avgScore": 4.8,\n' +
+        '      "cateName": "汤锅",\n' +
+        '      "frontImg": "//p1.meituan.net/biztone/1846874725_1666931296429.jpeg",\n' +
+        '      "name": "龙啸汤品·涮烤一体（汽博奥园店）"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "avgPrice": 10,\n' +
+        '      "avgScore": 3.6,\n' +
+        '      "cateName": "过桥米线",\n' +
+        '      "frontImg": "//p0.meituan.net/merchant/9a6f56ffbf6e06ac24f0dbc66652c71281134.jpg",\n' +
+        '      "name": "市喜米线（渝北爱琴海店）"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "avgPrice": 88,\n' +
+        '      "avgScore": 4.7,\n' +
+        '      "cateName": "融合烤肉",\n' +
+        '      "frontImg": "//p0.meituan.net/biztone/1744350973_1658460922269.jpeg",\n' +
+        '      "name": "东北烤肉·薇薇家（渝北金童路店）"\n' +
+        '    }\n' +
+        '  ]\n' +
+        '}';
+
+    let obj = JSON.parse(json) //  { poiInfos:[] }
+    console.log(obj)
+    // let arr = obj.poiInfos  // es5的写法，通过对象.属性的方式获取属性值
+    // 利用es6的解构语法获取poiInfos属性
+    let { poiInfos } = obj // 从obj对象中提取poiInfos属性
+    console.log(poiInfos)
+
+    // 得到tbody
+    let tbody = document.querySelector('#tab tbody')
+    poiInfos.forEach(item => {
+        console.log(item)
+        // 解构item对象，将它的属性值取出
+        let { avgPrice,avgScore,cateName,frontImg,name } = item
+        // `` 称为es6的模板字符串，模板字符串能够更容易的拼接html代码和js变量
+        const template = `
+            <tr>
+                <td>
+                      <input type="checkbox" name="ch">
+                </td>
+                <td>${name}</td>
+                <td>${cateName}</td>
+                <td>${avgPrice}</td>
+                <td>${avgScore}</td>
+                <td>
+                    <img src="${frontImg}" width="150" />
+                </td>
+                <td>
+                    <!--阻止a标签点击后的默认行为-->
+                    <a href="javascript:void(0)" onclick="removeRow(event)">删除</a>
+                </td>
+            </tr>
+        `
+        tbody.innerHTML = tbody.innerHTML + template
+    })
+
+    /*
+    * 删除行
+    * 利用tbody删除tr的方式来删除选择的行
+    * 要得到tr，则可以通过触发事件的a标签的上级的上级标签
+    * */
+    function removeRow(event){
+        // console.log('你点了a标签',event)
+
+        if (confirm('是否确认删除当前行')) {
+            // 得到触发事件的a标签
+
+            // dom操作，删除节点
+            let target = event.target;
+            let tr = target.parentElement.parentElement
+            tbody.removeChild(tr)
+        }
+    }
+
+    // 得到全选的复选框
+    let all = document.querySelector('#all')
+    /*
+    * change事件适用于单选框，以及复选框，当单选框/复选框选项发生改变时触发change事件
+    * */
+    all.onchange=function(){
+        // this 为当前触发事件的对象 ， 等价于event.target
+        // console.log(this.checked)
+        // 单选框以及复选框是否被选中可以通过checked属性来判断， true选择，false没有选中
+
+        // 获取表格中所有的复选框,  获取所有input标签name属性为ch的标签
+        let ch_arr = document.querySelectorAll('input[name="ch"]')
+        // console.log(ch_arr) // 返回的结果是NodeList类型的对象数组
+        // 为了能够像使用Array那样用，则需要将ch_arr转换为Array类型
+        ch_arr = Array.from(ch_arr)
+        //console.log(ch_arr)
+
+        // 遍历所有的ch复选框，将每一个复选框的checked设置为全选的checked
+        ch_arr.forEach(input => input.checked = this.checked)
+    }
+</script>
+</html>

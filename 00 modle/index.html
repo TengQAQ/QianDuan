@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <hxzy-checkbox :hobbies="['看书','抽烟','烫头','洗脚']" @change="hobbyChange($event)"></hxzy-checkbox>
+    <p>
+        你选择的爱好：{{select}}
+    </p>
+</div>
+<script src="js/vue-2.7.14.js"></script>
+<script>
+    Vue.component('hxzy-checkbox',{
+        template: `
+            <div>
+            爱好：
+                <label v-for="(item,index) in hobbies" :key="index">
+                  <input type="checkbox" :value="item" v-model="select" @change="hobbiesSelect"> {{item}}
+                </label>
+            </div>
+
+        `,
+        props: {
+            hobbies: {
+                type: Array,
+                default: []
+            }
+        },
+        data(){
+            return {
+                select: []
+            }
+        },
+        methods: {
+            hobbiesSelect(){
+                this.$emit('change',this.select)
+            }
+        }
+    })
+
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        data(){
+            return {
+                select: []
+            }
+        },
+        methods:{
+            hobbyChange(arr){
+                this.select = arr
+            }
+        }
+    })
+    // 和el:'#app'作用相同，但是更灵活
+    vm.$mount('#app')
+</script>
+</body>
+</html>

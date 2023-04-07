@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轻松尝试axios</title>
+    <script src="js/axios.js"></script>
+    <!-- <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon"> -->
+</head>
+<body>
+    <!-- <div id="root">
+        这是一个div
+    </div> -->
+    <script>
+        const promise = axios({
+            method:'GET',
+            url:'http://localhost:8080/web/api/test'
+        })
+        promise.then(function(response){
+            console.log(response);
+        }).catch(function(response){
+            console.log(response);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义组件</title>
+    <script src="js/vue-2.7.14.js"></script>
+</head>
+<body>
+    <h1>自定义组件div</h1>
+    <div id="root">
+        <h2>{{wellcome}}</h2>
+        <parent :hobbies = "['看书','抽烟','烫头','洗脚']"></parent>
+        <p>你选择的爱好是：{{showhobbies}}</p>
+    </div>
+    <script>
+        var cheakbox =  {
+            template : `<form>爱好
+                            <lable v-for="(item,index) in  hobbies" :key="index">
+                                <input  type="checkbox" :value="item" v-model:'selecthobby'>{{item}}</input>
+                            </lable>
+                        </form>`,
+            props : {
+                hobbies:{ // 为hxzy-list组件自定义了一个属性
+                // 用户传递的参数必须是一个数组的类型
+                type: Array,
+                // 为items属性定义的默认值
+                default: [],
+                // item属性是否可以省略
+                required: true,
+                validator(value){ // 对用户传递的参数进行校验，必须返回一个布尔值
+                    // return true,则说明用户传递参数合法
+                    // return false，则说明用户传递的参数不合法
+                    return true
+                }
+                }
+            },
+            data(){
+                return{
+                    selecthobby : []
+                }
+            }
+        }
+        const vm = new Vue({
+            el:'#root',
+            data(){
+                return{
+                    wellcome:'欢迎显示',
+                    showhobbies:[]
+                }
+            },
+            components:{
+                parent:cheakbox
+            }
+        })
+    </script>
+</body>
+</html>

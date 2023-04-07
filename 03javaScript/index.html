@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个javascript程序</title>
+</head>
+<body>
+    <h1>如何实现多行注释</h1>
+</body>
+<script>
+    /**
+     * 控制台输出
+    */
+   console.log("console.log控制台输出");
+   //var 是ES5中声明变量的语法
+   //在ES6中通过let声明变量，const声明常量
+   //var存在变量作用于提升的问题
+   var name = "黎协";
+   let sex = "女" ;
+   console.log("姓名"+name+"性别"+sex);
+//    let arrays =new array();
+   let names = ['张三','李四','毕业设计'];
+
+   const person={
+        name:'秦明',
+        age:"18",
+        //es5
+        eat:function(){
+            console.log(this.name)
+        },
+        //es6
+        studing(){
+            console.log(this.eat);
+        }
+    }
+    person.eat();
+
+    
+
+</script>
+</html>
