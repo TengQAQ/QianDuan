@@ -6,7 +6,8 @@ const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
-    avatar: ''
+    avatar: '',
+    account: ''
   }
 }
 
@@ -24,18 +25,21 @@ const mutations = {
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
+  },
+  SET_ACCOUNT: (state, value) => {
+    state.account = value
   }
 }
 
 const actions = {
-  // user login
+  // user login { commit }调用mutation的set方法修改state对象的中的变量的值
   login({ commit }, userInfo) {
-    const { username, password } = userInfo
+    // const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      login(userInfo).then(response => {
         const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        commit('SET_TOKEN', data)
+        setToken(data)
         resolve()
       }).catch(error => {
         reject(error)
@@ -43,18 +47,20 @@ const actions = {
     })
   },
 
-  // get user info
+  // 获取用户信息
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
+      // console.log('获取用户信息' + state.token)
       getInfo(state.token).then(response => {
         const { data } = response
 
         if (!data) {
-          return reject('Verification failed, please Login again.')
+          return reject('验证信息失败，请重新登陆。')
         }
 
         const { name, avatar } = data
 
+        // commit('SET_ACCOUNT', accountType)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         resolve(data)
@@ -64,13 +70,13 @@ const actions = {
     })
   },
 
-  // user logout
+  // 用户退出移除用户令牌
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
       logout(state.token).then(() => {
-        removeToken() // must remove  token  first
-        resetRouter()
-        commit('RESET_STATE')
+        removeToken() // 移除用户令牌
+        resetRouter()// 重置路由
+        commit('RESET_STATE')// 重置vuex
         resolve()
       }).catch(error => {
         reject(error)

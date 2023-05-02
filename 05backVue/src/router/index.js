@@ -56,27 +56,75 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/emp',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
+    children: [{
+      path: 'emp',
+      name: 'Emp',
+      component: () => import('@/views/emp/index'),
+      meta: { title: '员工', icon: 'dashboard' }
+    }]
   },
 
+  {
+    path: '/mer',
+    component: Layout,
+    children: [{
+      path: 'mer',
+      name: 'Mer',
+      component: () => import('@/views/merchandise/index'),
+      meta: { title: '商家表', icon: 'dashboard' }
+    }]
+  },
+
+  {
+    path: '/category',
+    component: Layout,
+    children: [{
+      path: 'category',
+      name: 'Category',
+      component: () => import('@/views/category/index'),
+      meta: { title: '商品分类', icon: 'dashboard' }
+    }]
+  },
+  // 商家入住
+  {
+    path: '/recruit',
+    component: () => import('@/views/recruit/index'),
+    hidden: true,
+    meta: {
+      title: '商家申请入住'
+    }
+  },
+  // 同意政策
+  {
+    path: '/safety-policy',
+    component: () => import('@/views/recruit/safety-policy'),
+    hidden: true,
+    meta: {
+      title: '商家申请入住'
+    }
+  },
+  // 商家申请入住审核不通过
+  {
+    path: '/recruitedit',
+    component: () => import('@/views/recruit/edit'),
+    hidden: true,
+    meta: {
+      title: '商家申请入住资料修改'
+    }
+  },
+
+  {
+    path: '/autoCode',
+    component: Layout,
+    children: [{
+      path: 'autoCode',
+      name: 'AutoCode',
+      component: () => import('@/views/autocode/index.vue'),
+      meta: { title: '代码自动生成', icon: 'dashboard' }
+    }]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
